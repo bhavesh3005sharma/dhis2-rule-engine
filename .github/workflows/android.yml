@@ -22,4 +22,10 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew assembleDebug
+    - name: Upload Apk Artifact
+
+      uses: actions/upload-artifact@v2
+      with:
+        name: debug-application-apk
+        path: ./app/build/outputs
